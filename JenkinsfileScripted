@@ -3,13 +3,12 @@ node
  
   stage("CheckOutCodeGit")
   {
-   git credentialsId: '23fbbef1-67c3-4861-9aad-ab4657b34afe', url: 'https://github.com/jaikay52/nodejs-app-mss.git'
-  }
+   git credentialsId: '23fbbef1-67c3-4861-9aad-ab4657b34afe', url:'https://github.com/jaikay52/nodejs-app-mss.git'
  
  stage("Build")
  {
- nodejs(nodeJSInstallationName: 'nodejs123') {
-        sh 'npm install'
+ nodejs(nodeJSInstallationName: 'nodejs16.10.1') {
+ sh 'npm install'
     }
  }         
 }
